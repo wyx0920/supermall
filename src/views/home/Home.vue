@@ -11,9 +11,16 @@ export default{
   components:{
     NavBar
   },
+  data(){
+    return{
+      banners:[],
+      recommends:[]
+    }
+  },
   created(){
     getHomeMutidata().then(res=>{
-      console.log(res)
+      this.banners = res.data.banner.list;
+      this.recommends = res.data.recommend.list;
     })
   }
 }
