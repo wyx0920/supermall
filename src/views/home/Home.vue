@@ -5,11 +5,16 @@
 </template>
 <script>
 import NavBar from 'components/common/navbar/NavBar'
-
+import {getHomeMutidata} from 'network/home.js'
 export default{
   name:"Home",
   components:{
     NavBar
+  },
+  created(){
+    getHomeMutidata().then(res=>{
+      console.log(res)
+    })
   }
 }
 </script>
